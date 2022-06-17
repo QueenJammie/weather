@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ThreeDots } from  'react-loader-spinner';
 
 export default function Weather(props) {
   let [temperature, setTemperature] = useState("null");
@@ -15,10 +18,10 @@ export default function Weather(props) {
   if (temperature) {
     return (
       <p>
-        The temperature in {props.city} is {Math.round(temperature)}°C
-      </p>
+        The weather in {props.city} is actually {Math.round(temperature)}°C
+        </p>
     );
   } else {
-    return <p>Loading..</p>;
+    return <p><ThreeDots color="#00BFFF" height={80} width={80} class="center" /></p>;
   }
 }
