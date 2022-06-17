@@ -1,6 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './logo.svg';
+import React from "react";
+import ReactDOM from "react-dom";
 import Weather from "./Weather";
+
 import './App.css';
 
 export default function App() {
@@ -8,8 +11,11 @@ export default function App() {
     <div className="App">
       <header className="App-header">
         <p class="mt-3 ms-2"><img src={logo} className="App-logo" alt="logo" width="50px" /> React Weather app.</p>
-        <Weather />
+        <Weather city="Sherbrooke" />
       </header>
     </div>
   );
 }
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
